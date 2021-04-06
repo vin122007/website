@@ -1,1 +1,11 @@
-<h1>this is awesome</h1>
+{% include 'header.html' %}
+
+<h1>welcome to the website</h1>
+
+<a href="/planes" type="button" class="btn btn-success">Click here for planes</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script> anime({
+  targets: '.btn',
+  translateX: 250
+});</script>
