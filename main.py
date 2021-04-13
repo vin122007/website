@@ -16,12 +16,12 @@ def hello_hi():
   return 'Hi!'
 
 @app.route('/planes')
-def planes():
-  r = requests.get('https://api.creativecommons.engineering/v1/images?q=cirrussr22')
+def planes(x='planes'):
+  r = requests.get('https://api.creativecommons.engineering/v1/images?q=%s&page=1'%x)
   print(str(r.status_code))
   print(r.text)
   x = r.json()
-  return render_template('planes.html', name="Vinay", data = x)
+  return render_template('planes.html', name="Vinay", data = x['results'])
 
 
 
