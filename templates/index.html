@@ -1,19 +1,17 @@
 {% include 'header.html' %}
 
-<h1>Welcome to the website!</h1>
+<h1 style = "font-family: 'Source Sans Pro', sans-serif;">Welcome to the website!</h1>
 <form action="/planes" method="GET">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">What type of images would you like to see?</label>
     <input name='x' type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">You can do anything you want!</div>
   </div>
+  <div class="mb-3">
+  <label for="exampleInputEmail2" class="form-label">What is your name?</label>
+    <input name='z' type="text" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">To help the website</div>
+  </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<a href="/planes" type="button" class="btn btn-success">Click here for planes</a>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-<script> anime({
-  targets: '.btn',
-  translateX: 250
-});</script>

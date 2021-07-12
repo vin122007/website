@@ -2,6 +2,7 @@
 from flask import Flask
 import random
 import requests
+from flask import request
 app = Flask(__name__)
 
 from flask import render_template
@@ -16,13 +17,12 @@ def hello_hi():
   return 'Hi!'
 
 @app.route('/planes')
-def planes(x='planes'):
+def planes():
+  x = request.args.get('x')
+  z = request.args.get('z')
   r = requests.get('https://api.creativecommons.engineering/v1/images?q=%s&page=1'%x)
-  print(str(r.status_code))
-  print(r.text)
-  x = r.json()
-  return render_template('planes.html', name="Vinay", data = x['results'])
-
+  y = r.json()
+  return render_template('planes.html', name= z, data = y['results'], x = x)
 
 
 if __name__ == "__main__": # Makes sure this is the main process
